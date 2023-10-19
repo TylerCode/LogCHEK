@@ -32,7 +32,7 @@ Pretty straightforward, just be able to manage the list in the application itsel
 It should also NOT fail if the csv doesn't exist, it should just create the csv instead and tell you to update it. 
 
 
-#### Releases
+#### Additional Releases
 
 - MacOS Release (x86)
 - Linux ARM Release
