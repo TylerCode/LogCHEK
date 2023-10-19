@@ -1,4 +1,4 @@
-module GoTest
+module LogCHEK
 
 go 1.21.2
 
