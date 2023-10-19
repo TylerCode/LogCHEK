@@ -8,6 +8,30 @@ v0.1.0.0
 
 
 
+# Usage
+
+Just open up the loglist.csv and put the path to each log file on a separate line. Use the full path when possible. Should work with network paths such as `\\someserver\c$\windows`
+
+Once you are satisfied with the list, hit save and run the application.
+
+Once it finishes scanning you will either see "All Clear" or you will see a list of files with errors displayed. 
+
+
+## Features on the list
+
+These might get implemented but I really just needed something quick and dirty for the moment. 
+
+#### Dynamic log filenames
+
+For example, you should be able to put `$date` in the name and have it be replaced with todays date.
+
+#### In-App list editing
+
+Pretty straightforward, just be able to manage the list in the application itself instead. 
+
+It should also NOT fail if the csv doesn't exist, it should just create the csv instead and tell you to update it. 
+
+
 # Building
 
 This application works on Windows, Mac, and Linux (should work in ARM environments but I have not tested it there)
@@ -49,5 +73,7 @@ go run main.go
 but it can be built using
 
 ```bash
-go build -ldflags -o LogCHEK main.go
+go build -o LogCHEK main.go
 ```
+
+
