@@ -32,6 +32,14 @@ Pretty straightforward, just be able to manage the list in the application itsel
 It should also NOT fail if the csv doesn't exist, it should just create the csv instead and tell you to update it. 
 
 
+#### Releases
+
+- MacOS Release (x86)
+- Linux ARM Release
+- Window ARM Release
+- MacOS ARM Release (Will be a while, I don't have an M1 mac)
+
+
 # Building
 
 This application works on Windows, Mac, and Linux (should work in ARM environments but I have not tested it there)
