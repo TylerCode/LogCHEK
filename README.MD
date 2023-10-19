@@ -60,6 +60,15 @@ go build -ldflags -H=windowsgui -o LogCHEK.exe main.go
 
 to build the application and give yourself an exe. You can use RCEdit to customize it further with an icon and such.
 
+If you DO want to use RCEdit, use the following commands:
+
+```bash
+./rcedit.exe LogCHEK.exe --set-version-string "FileDescription" "Log file checker."
+./rcedit.exe LogCHEK.exe --set-version-string "ProductName" "LogCHEK"
+./rcedit.exe LogCHEK.exe --set-file-version "0.1.0.0"
+./rcedit.exe LogCHEK.exe --set-product-version "0.1.0.0"
+./rcedit.exe LogCHEK.exe --set-icon "logo.ico"
+```
 
 
 ## Linux
