@@ -1,5 +1,11 @@
 # LogCHEK
 
+### RIP
+
+Didn't think about the fact that servers usually don't have OpenGL available. Going to need to move away from this UI system
+
+### General
+
 A simple tool for checking log files. More functionality to come but wanted to make a small application cause I'm lazy. 
 
 Also wanted to try GO. 
