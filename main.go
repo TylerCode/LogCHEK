@@ -14,25 +14,17 @@ import (
 
 func main() {
 	myApp := app.New()
-	myWindow := myApp.NewWindow("LogCHEK")
-	myWindow.Resize(fyne.NewSize(640, 400))  // Set window size
+	myWindow := myApp.NewWindow("Log Scanner")
 
 	statusLabel := widget.NewLabel("Ready")
 	errorLogsTextArea := widget.NewMultiLineEntry()
-	errorLogsTextArea.Disable()
-
-
-	// Make errorLogsTextArea taller using a scroll container
-	scrollContainer := container.NewVScroll(errorLogsTextArea)
-	scrollContainer.SetMinSize(fyne.NewSize(640, 300))
-
 	startButton := widget.NewButton("Start Scan", func() {
 		go scanLogs(statusLabel, errorLogsTextArea)
 	})
 
 	content := container.NewVBox(
 		statusLabel,
-		scrollContainer,   // Use the scroll container here
+		errorLogsTextArea,
 		startButton,
 	)
 
@@ -42,31 +34,10 @@ func main() {
 
 func scanLogs(statusLabel *widget.Label, errorLogsTextArea *widget.Entry) {
 	statusLabel.SetText("Scanning")
-	file, err := os.Open("loglist.csv")
+	errorLogs, err := GetErrorLogs()
 	if err != nil {
-		statusLabel.SetText(fmt.Sprintf("Error opening loglist.csv: %v", err))
+		statusLabel.SetText("Error: " + err.Error())
 		return
-	}
-	defer file.Close()
-	
-	reader := csv.NewReader(file)
-	records, err := reader.ReadAll()
-	if err != nil {
-		statusLabel.SetText(fmt.Sprintf("Error reading loglist.csv: %v", err))
-		return
-	}
-	
-
-	var errorLogs []string
-	for _, record := range records {
-		if len(record) == 0 {
-			continue
-		}
-
-		filePath := record[0]
-		if containsError(filePath) {
-			errorLogs = append(errorLogs, filePath)
-		}
 	}
 
 	if len(errorLogs) == 0 {
@@ -75,21 +46,5 @@ func scanLogs(statusLabel *widget.Label, errorLogsTextArea *widget.Entry) {
 		statusLabel.SetText("Errors Found")
 		errorLogsTextArea.SetText(strings.Join(errorLogs, "\n"))
 	}
-}
-
-func containsError(filePath string) bool {
-	file, err := os.Open(filePath)
-	if err != nil {
-		return false
-	}
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		if strings.Contains(scanner.Text(), "error") {
-			return true
-		}
-	}
-	return false
 }
 
