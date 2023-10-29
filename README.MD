@@ -5,6 +5,7 @@
 Didn't think about the fact that servers usually don't have OpenGL available. Plan is to split it out as a command line tool and a gui tool, potentially keeping the same ui framework. 
 
 
+
 ### General
 
 A simple tool for checking log files. More functionality to come but wanted to make a small application cause I'm lazy. 
