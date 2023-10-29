@@ -44,7 +44,7 @@ It should also NOT fail if the csv doesn't exist, it should just create the csv 
 
 - MacOS Release (x86)
 - Linux ARM Release
-- Window ARM Release
+- Window ARM Release (need to do some research on getting GCC for ARM for Windows)
 - MacOS ARM Release (Will be a while, I don't have an M1 mac)
 
 
