@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"yourModuleName/scanner" // replace with your actual module name
+	"LogCHEK/scanner" // replace with your actual module name
 )
 
 func main() {

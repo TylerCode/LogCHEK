@@ -2,7 +2,7 @@
 
 ### RIP
 
-Didn't think about the fact that servers usually don't have OpenGL available. Plan is to split it out as a command line tool and a gui tool, potentially keeping the same ui framework. 
+Didn't think about the fact that servers usually don't have OpenGL available. In progress of splitting it out as a command line and a gui tool
 
 
 
@@ -12,7 +12,7 @@ A simple tool for checking log files. More functionality to come but wanted to m
 
 Also wanted to try GO. 
 
-v0.1.0.0
+v0.2.0.0
 
 
 
@@ -71,7 +71,8 @@ That command will tell you if you're good to go.
 Finally, you can use:
 
 ```bash
-go build -ldflags -H=windowsgui -o LogCHEK.exe main.go
+go build -ldflags -H=windowsgui -o LogCHEK-GUI.exe main.go
+go build -ldflags -o LogCHEK.exe cli.go
 ```
 
 to build the application and give yourself an exe. You can use RCEdit to customize it further with an icon and such.
@@ -79,10 +80,15 @@ to build the application and give yourself an exe. You can use RCEdit to customi
 If you DO want to use RCEdit, use the following commands:
 
 ```bash
+./rcedit.exe LogCHEK-GUI.exe --set-version-string "FileDescription" "Log file checker."
+./rcedit.exe LogCHEK-GUI.exe --set-version-string "ProductName" "LogCHEK"
+./rcedit.exe LogCHEK-GUI.exe --set-file-version "0.2.0.0"
+./rcedit.exe LogCHEK-GUI.exe --set-product-version "0.2.0.0"
+./rcedit.exe LogCHEK-GUI.exe --set-icon "logo.ico"
 ./rcedit.exe LogCHEK.exe --set-version-string "FileDescription" "Log file checker."
 ./rcedit.exe LogCHEK.exe --set-version-string "ProductName" "LogCHEK"
-./rcedit.exe LogCHEK.exe --set-file-version "0.1.0.0"
-./rcedit.exe LogCHEK.exe --set-product-version "0.1.0.0"
+./rcedit.exe LogCHEK.exe --set-file-version "0.2.0.0"
+./rcedit.exe LogCHEK.exe --set-product-version "0.2.0.0"
 ./rcedit.exe LogCHEK.exe --set-icon "logo.ico"
 ```
 
