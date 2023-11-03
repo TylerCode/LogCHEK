@@ -1,5 +1,7 @@
 # LogCHEK
 
+`main: ` [![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml)
+
 ### RIP
 
 Didn't think about the fact that servers usually don't have OpenGL available. In progress of splitting it out as a command line and a gui tool
