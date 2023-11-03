@@ -4,13 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"LogCHEK/scanner" // replace with your actual module name
+	"LogCHEK/scanner"
 )
 
 func main() {
 	fmt.Println("Starting log file scan...")
 
-	// Report functions for the CLI.
 	reportScanStatus := func(status string) {
 		fmt.Println(status)
 	}
@@ -23,10 +22,8 @@ func main() {
 		}
 	}
 
-	// Start scanning logs.
 	scanner.ScanLogs(reportScanStatus, reportErrors)
 
-	// Wait for user input before exiting.
 	fmt.Println("Press 'Enter' to exit...")
 	bufio.NewReader(os.Stdin).ReadBytes('\n')
 }
