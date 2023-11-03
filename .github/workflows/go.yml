@@ -17,17 +17,10 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.21'
-
-    # This step caches the Go modules
-    - name: Cache Go modules
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/go/pkg/mod
-          ./src/go.sum
-        key: ${{ runner.os }}-go-${{ hashFiles('./src/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-
+        check-latest: true
+        cache-dependency-path: |
+               subdir/go.sum
+               tools/go.sum
 
     - name: Build
       run: go build -o LogCHEK-GUI main.go
