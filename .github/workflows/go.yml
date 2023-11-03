@@ -21,6 +21,11 @@ jobs:
         cache-dependency-path: |
                src/go.sum
 
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libgl1-mesa-dev xorg-dev
+
     - name: Build
       run: go build -o LogCHEK-GUI main.go
       working-directory: ./src
