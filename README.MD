@@ -73,7 +73,7 @@ Finally, you can use:
 
 ```bash
 go build -ldflags -H=windowsgui -o LogCHEK-GUI.exe main.go
-go build -ldflags -o LogCHEK.exe cli.go
+go build -o LogCHEK.exe cli.go
 ```
 
 to build the application and give yourself an exe. You can use RCEdit to customize it further with an icon and such.
