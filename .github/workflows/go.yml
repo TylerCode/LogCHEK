@@ -13,9 +13,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./src
     steps:
     - uses: actions/checkout@v3
 
@@ -26,6 +23,8 @@ jobs:
 
     - name: Build
       run: go build -o LogCHEK-GUI main.go
+      working-directory: ./src
 
     - name: Test
       run: go test -v main.go
+      working-directory: ./src
