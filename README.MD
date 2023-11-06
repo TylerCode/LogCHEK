@@ -1,5 +1,5 @@
 # LogCHEK
-![Logo](https://github.com/TylerCode/LogCHEK/blob/main/src/logo.png)
+![Logo](https://github.com/TylerCode/LogCHEK/blob/main/src/logo-large.png)
 
 
 [![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml)
