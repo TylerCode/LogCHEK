@@ -1,8 +1,7 @@
 # LogCHEK
 <p align="center">
-  <img width="600" height="200" src="https://www.python.org/python-.png">
+  <img width="256" height="256" src="https://github.com/TylerCode/LogCHEK/blob/main/src/logo-large.png)">
 </p>
-![Logo](https://github.com/TylerCode/LogCHEK/blob/main/src/logo-large.png)
 
 
 [![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml)
