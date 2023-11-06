@@ -53,6 +53,8 @@ Also, if you just want to run it, this command should work on any machine that t
 go run main.go
 ```
 
+Also, there are build scripts which mostly work :D
+
 ## Windows
 
 You will need the `mingw` compiler tools which can be procured through the chocolatey package manager (the easiest way, just do it)
