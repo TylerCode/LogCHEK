@@ -1,18 +1,17 @@
 # LogCHEK
+![Logo](https://github.com/TylerCode/LogCHEK/blob/main/src/logo.png)
 
-### RIP
 
-Didn't think about the fact that servers usually don't have OpenGL available. In progress of splitting it out as a command line and a gui tool
+[![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml)
+
+Release: `v0.2.0.0`
+Dev(main): `v0.3.0.0`
 
 
 
 ### General
 
-A simple tool for checking log files. More functionality to come but wanted to make a small application cause I'm lazy. 
-
-Also wanted to try GO. 
-
-v0.2.0.0
+A simple tool for checking log files. Mostly just wanted to try GO and save a bit of manual checking every week while I'm at it. 
 
 
 
@@ -52,6 +51,13 @@ It should also NOT fail if the csv doesn't exist, it should just create the csv 
 
 This application works on Windows, Mac, and Linux (should work in ARM environments but I have not tested it there)
 
+Also, if you just want to run it, this command should work on any machine that the build tools are installed on:
+```bash
+go run main.go
+```
+
+Also, there are build scripts which mostly work :D
+
 ## Windows
 
 You will need the `mingw` compiler tools which can be procured through the chocolatey package manager (the easiest way, just do it)
@@ -72,7 +78,7 @@ Finally, you can use:
 
 ```bash
 go build -ldflags -H=windowsgui -o LogCHEK-GUI.exe main.go
-go build -ldflags -o LogCHEK.exe cli.go
+go build -o LogCHEK.exe cli.go
 ```
 
 to build the application and give yourself an exe. You can use RCEdit to customize it further with an icon and such.
@@ -95,16 +101,17 @@ If you DO want to use RCEdit, use the following commands:
 
 ## Linux
 
-I just usually use 
+For all the dependencies:
 
 ```bash
-go run main.go
+sudo apt-get install -y libgl1-mesa-dev xorg-dev gcc
 ```
 
-but it can be built using
+To build!
 
 ```bash
-go build -o LogCHEK main.go
+CGO_ENABLED=1 go build -o LogCHEK-GUI main.go
+CGO_ENABLED=1 go build -o LogCHEK cli.go
 ```
 
 

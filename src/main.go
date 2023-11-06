@@ -7,13 +7,13 @@ import (
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
-	"LogCHEK/scanner" // replace with your actual module name
+	"LogCHEK/scanner"
 )
 
 func main() {
 	myApp := app.New()
 	myWindow := myApp.NewWindow("LogCHEK")
-	myWindow.Resize(fyne.NewSize(640, 400)) // Set window size
+	myWindow.Resize(fyne.NewSize(640, 400)) 
 
 	statusLabel := widget.NewLabel("Ready")
 	errorLogsTextArea := widget.NewMultiLineEntry()

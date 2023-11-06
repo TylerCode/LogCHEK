@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"regexp"
 )
 
 // ScanLogs scans a list of log files and reports which files contain errors.
@@ -55,9 +56,15 @@ func ContainsError(filePath string) bool {
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		if strings.Contains(scanner.Text(), "error") {
+		// Convert text to lower case
+		text := strings.ToLower(scanner.Text())
+
+		// Use regular expression to find "error" not preceded by "0"
+		matched, _ := regexp.MatchString(`[^0]\serror`, text)
+		if matched || strings.HasPrefix(text, "error") {
 			return true
 		}
 	}
+
 	return false
 }
