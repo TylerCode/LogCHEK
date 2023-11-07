@@ -7,6 +7,7 @@
 [![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml)
 
 Release: `v0.2.0.0`
+
 Dev(main): `v0.3.0.0`
 
 
@@ -32,7 +33,7 @@ These might get implemented but I really just needed something quick and dirty f
 
 #### Dynamic log filenames
 
-For example, you should be able to put `$date` in the name and have it be replaced with todays date.
+For a simple example, you should be able to put `$date` in the name and have it be replaced with todays date.
 
 #### In-App list editing
 
@@ -44,7 +45,7 @@ It should also NOT fail if the csv doesn't exist, it should just create the csv 
 #### Additional Releases
 
 - MacOS Release (x86)
-- Linux ARM Release
+- Linux ARM Release (should be pretty straightforward) 
 - Window ARM Release (need to do some research on getting GCC for ARM for Windows)
 - MacOS ARM Release (Will be a while, I don't have an M1 mac)
 
@@ -90,13 +91,13 @@ If you DO want to use RCEdit, use the following commands:
 ```bash
 ./rcedit.exe LogCHEK-GUI.exe --set-version-string "FileDescription" "Log file checker."
 ./rcedit.exe LogCHEK-GUI.exe --set-version-string "ProductName" "LogCHEK"
-./rcedit.exe LogCHEK-GUI.exe --set-file-version "0.2.0.0"
-./rcedit.exe LogCHEK-GUI.exe --set-product-version "0.2.0.0"
+./rcedit.exe LogCHEK-GUI.exe --set-file-version "0.3.0.0"
+./rcedit.exe LogCHEK-GUI.exe --set-product-version "0.3.0.0"
 ./rcedit.exe LogCHEK-GUI.exe --set-icon "logo.ico"
 ./rcedit.exe LogCHEK.exe --set-version-string "FileDescription" "Log file checker."
 ./rcedit.exe LogCHEK.exe --set-version-string "ProductName" "LogCHEK"
-./rcedit.exe LogCHEK.exe --set-file-version "0.2.0.0"
-./rcedit.exe LogCHEK.exe --set-product-version "0.2.0.0"
+./rcedit.exe LogCHEK.exe --set-file-version "0.3.0.0"
+./rcedit.exe LogCHEK.exe --set-product-version "0.3.0.0"
 ./rcedit.exe LogCHEK.exe --set-icon "logo.ico"
 ```
 
