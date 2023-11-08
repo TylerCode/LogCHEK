@@ -28,7 +28,7 @@ Once you are satisfied with the list, hit save and run the application.
 Once it finishes scanning you will either see "All Clear" or you will see a list of files with errors displayed. 
 
 <p align="center">
-  <img width="256" height="256" src="https://raw.githubusercontent.com/TylerCode/LogCHEK/main/.github/media/screenshot_0.2.0.0.png">
+  <img width="640" height="480" src="https://raw.githubusercontent.com/TylerCode/LogCHEK/main/.github/media/screenshot_0.2.0.0.png">
 </p>
 
 
