@@ -32,7 +32,7 @@ Once it finishes scanning you will either see "All Clear" or you will see a list
 </p>
 
 
-## Features on the list
+## What's next
 
 These might get implemented but I really just needed something quick and dirty for the moment. 
 
