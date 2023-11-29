@@ -1,12 +1,13 @@
 package main
 
 import (
-	"strings"
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/widget"
-	"LogCHEK/scanner"
+    "log"
+    "strings"
+    "fyne.io/fyne/v2"
+    "fyne.io/fyne/v2/app"
+    "fyne.io/fyne/v2/container"
+    "fyne.io/fyne/v2/widget"
+    "LogCHEK/scanner"
 )
 
 func main() {
