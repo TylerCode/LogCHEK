@@ -2,7 +2,6 @@ package main
 
 import (
 	"strings"
-
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
@@ -12,8 +11,19 @@ import (
 
 func main() {
 	myApp := app.New()
+
+	icon, err := fyne.LoadResourceFromPath("logo.png")
+	if err != nil {
+		log.Printf("Failed to load icon: %v", err)
+	}
+
 	myWindow := myApp.NewWindow("LogCHEK")
-	myWindow.Resize(fyne.NewSize(640, 400)) 
+	
+	if icon != nil {
+		myWindow.SetIcon(icon)
+	}
+	
+	myWindow.Resize(fyne.NewSize(640, 400))
 
 	statusLabel := widget.NewLabel("Ready")
 	errorLogsTextArea := widget.NewMultiLineEntry()
