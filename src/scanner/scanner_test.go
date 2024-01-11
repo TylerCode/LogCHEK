@@ -22,9 +22,9 @@ func TestScanLogs(t *testing.T) {
 		name    string
 		content string
 	}{
-		{"log1.txt", "INFO: Nothing to see here"},
-		{"log2.txt", "ERROR: EVERYTHING IS ON FIRE"},
-		{"log3.txt", "INFO: Process run with 0 errors."},
+		{"log1.txt", "2024-01-11T20:55:42+00:00 INFO: Nothing to see here"},
+		{"log2.txt", "2024-01-11T20:55:49+00:00 ERROR: EVERYTHING IS ON FIRE"},
+		{"log3.txt", "2024-01-11T20:55:56+00:00 INFO: Process run with 0 errors."},
 	}
 
 	for _, lf := range logFiles {
