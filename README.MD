@@ -5,11 +5,11 @@
 </p>
 
 
-[![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml)
+[![Go](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/TylerCode/LogCHEK/actions/workflows/go.yml) << Don't listen to it!
 
 Release: `v0.2.0.0`
 
-Dev(main): `v0.3.0.0`
+Dev(main): `v0.3.1.0`
 
 
 
