@@ -60,7 +60,7 @@ func ContainsError(filePath string) bool {
 		text := strings.ToLower(scanner.Text())
 
 		// Use regular expression to find "error" not preceded by "0" or "no"
-		matched, _ := regexp.MatchString(`(?<![0no]\s)error`, text)
+		matched, _ := regexp.MatchString(`(?i)(?<![0no]\s)error`, text)
 		if matched {
 			return true
 		}
