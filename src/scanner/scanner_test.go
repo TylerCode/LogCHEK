@@ -23,7 +23,7 @@ func TestScanLogs(t *testing.T) {
 		content string
 	}{
 		{"log1.txt", "2024-01-11T20:55:42+00:00 INFO: Nothing to see here"},
-		{"log2.txt", "2024-01-11T20:55:49+00:00 ERROR: EVERYTHING IS ON FIRE"},
+		{"log2.txt", "2024-01-11T20:55:49+00:00 ErRoR: EVERYTHING IS ON FIRE"},
 		{"log3.txt", "2024-01-11T20:55:56+00:00 INFO: Process run with 0 errors."},
 	}
 

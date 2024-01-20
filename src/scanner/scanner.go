@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"regexp"
 )
 
 // ScanLogs scans a list of log files and reports which files contain errors.
@@ -55,17 +54,32 @@ func ContainsError(filePath string) bool {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
+
 	for scanner.Scan() {
 		// Convert text to lower case
 		text := strings.ToLower(scanner.Text())
 
-		// Use regular expression to find "error" not preceded by "0" or "no"
-		matched, _ := regexp.MatchString(`(?i)(?<![0no]\s)error`, text)
-		if matched {
-			return true
+		// Check if 'error' is in the text
+		if errorIndex := strings.Index(text, "error"); errorIndex != -1 {
+			// If 'error' is at the beginning of the text, it's an error
+			if errorIndex == 0 {
+				return true
+			}
+
+			// If there is space before 'error', check the substring before that space
+			if errorIndex > 1 && text[errorIndex-1] == ' ' {
+				// Get substring before the space
+				precedingText := text[:errorIndex-1]
+				if !strings.HasSuffix(precedingText, "0") {
+					return true
+				}
+			} else if errorIndex == 1 || (errorIndex > 1 && text[errorIndex-2] != '0') {
+				// If there's no space before 'error', check the character before 'error'
+				// Or if there are more characters before 'error', ensure the second last is not '0'
+				return true
+			}
 		}
 	}
 
 	return false
 }
-
