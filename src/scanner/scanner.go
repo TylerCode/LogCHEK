@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"unicode"
 )
 
 // ScanLogs scans a list of log files and reports which files contain errors.
@@ -55,6 +56,7 @@ func ContainsError(filePath string) bool {
 
 	scanner := bufio.NewScanner(file)
 
+	// Scan line by line
 	for scanner.Scan() {
 		// Convert text to lower case
 		text := strings.ToLower(scanner.Text())
@@ -66,18 +68,22 @@ func ContainsError(filePath string) bool {
 				return true
 			}
 
-			// If there is space before 'error', check the substring before that space
-			if errorIndex > 1 && text[errorIndex-1] == ' ' {
-				// Get substring before the space
-				precedingText := text[:errorIndex-1]
-				if !strings.HasSuffix(precedingText, "0") {
-					return true
+			// Check the text before 'error'
+			beforeError := text[:errorIndex]
+			trimmedBeforeError := strings.TrimSpace(beforeError)
+
+			// Check if the last character before 'error' is '0' not preceded by another digit
+			if len(trimmedBeforeError) > 0 {
+				lastCharIndex := len(trimmedBeforeError) - 1
+				if trimmedBeforeError[lastCharIndex] == '0' {
+					if lastCharIndex == 0 || !unicode.IsDigit(rune(trimmedBeforeError[lastCharIndex-1])) {
+						continue
+					}
 				}
-			} else if errorIndex == 1 || (errorIndex > 1 && text[errorIndex-2] != '0') {
-				// If there's no space before 'error', check the character before 'error'
-				// Or if there are more characters before 'error', ensure the second last is not '0'
-				return true
 			}
+
+			// Otherwise, it's an error
+			return true
 		}
 	}
 
