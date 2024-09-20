@@ -15,7 +15,7 @@ Dev(main): `v0.3.1.0`
 
 ### General
 
-A simple tool for checking log files. Mostly just wanted an excuse to write GO and save a bit of manual checking every week while I'm at it. 
+A simple tool for checking log files. Mostly just wanted to slap something together that saves me a bit of a time every week, figured if it saves someone else 5 minutes every week then that's a bonus!
 
 
 
