@@ -27,15 +27,29 @@ func ScanLogs(reportScanStatus func(string), reportErrors func([]string)) {
 	}
 
 	var errorLogs []string
+	var inaccessibleFiles int
 	for _, record := range records {
 		if len(record) == 0 {
 			continue
 		}
 
-		filePath := record[0]
-		if ContainsError(filePath) {
+		filePath := strings.TrimSpace(record[0])
+		if filePath == "" {
+			continue
+		}
+
+		hasError, accessible := ContainsError(filePath)
+		if !accessible {
+			inaccessibleFiles++
+			continue
+		}
+		if hasError {
 			errorLogs = append(errorLogs, filePath)
 		}
+	}
+
+	if inaccessibleFiles > 0 {
+		reportScanStatus(fmt.Sprintf("Warning: %d file(s) could not be accessed", inaccessibleFiles))
 	}
 
 	if len(errorLogs) == 0 {
@@ -47,10 +61,11 @@ func ScanLogs(reportScanStatus func(string), reportErrors func([]string)) {
 }
 
 // ContainsError checks if a given log file contains the word "error".
-func ContainsError(filePath string) bool {
+// Returns (hasError, accessible) where accessible indicates if the file could be read.
+func ContainsError(filePath string) (bool, bool) {
 	file, err := os.Open(filePath)
 	if err != nil {
-		return false
+		return false, false
 	}
 	defer file.Close()
 
@@ -65,7 +80,7 @@ func ContainsError(filePath string) bool {
 		if errorIndex := strings.Index(text, "error"); errorIndex != -1 {
 			// If 'error' is at the beginning of the text, it's an error
 			if errorIndex == 0 {
-				return true
+				return true, true
 			}
 
 			// Check the text before 'error'
@@ -83,9 +98,9 @@ func ContainsError(filePath string) bool {
 			}
 
 			// Otherwise, it's an error
-			return true
+			return true, true
 		}
 	}
 
-	return false
+	return false, true
 }

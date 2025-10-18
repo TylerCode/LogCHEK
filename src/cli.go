@@ -1,10 +1,10 @@
 package main
 
 import (
+	"LogCHEK/scanner"
 	"bufio"
 	"fmt"
 	"os"
-	"LogCHEK/scanner"
 )
 
 func main() {
