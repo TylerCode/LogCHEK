@@ -104,9 +104,9 @@ func TestScanLogsWithInaccessibleFiles(t *testing.T) {
 
 func TestContainsError(t *testing.T) {
 	tests := []struct {
-		name           string
-		content        string
-		expectError    bool
+		name             string
+		content          string
+		expectError      bool
 		expectAccessible bool
 	}{
 		{"no error", "INFO: Everything is fine", false, true},

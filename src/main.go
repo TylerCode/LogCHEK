@@ -1,13 +1,13 @@
 package main
 
 import (
-    "log"
-    "strings"
-    "fyne.io/fyne/v2"
-    "fyne.io/fyne/v2/app"
-    "fyne.io/fyne/v2/container"
-    "fyne.io/fyne/v2/widget"
-    "LogCHEK/scanner"
+	"LogCHEK/scanner"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/widget"
+	"log"
+	"strings"
 )
 
 func main() {
@@ -19,11 +19,11 @@ func main() {
 	}
 
 	myWindow := myApp.NewWindow("LogCHEK")
-	
+
 	if icon != nil {
 		myWindow.SetIcon(icon)
 	}
-	
+
 	myWindow.Resize(fyne.NewSize(640, 400))
 
 	statusLabel := widget.NewLabel("Ready")
