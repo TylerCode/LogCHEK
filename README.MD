@@ -93,15 +93,17 @@ to build the application and give yourself an exe. You can use RCEdit to customi
 
 ## Windows ARM64
 
-Building on Windows ARM requires a different compiler toolchain. **See [BUILDING_WINDOWS_ARM.md](BUILDING_WINDOWS_ARM.md) for detailed instructions.**
+Building on Windows ARM requires a different compiler toolchain. 
 
-Quick start:
-1. Download and install llvm-mingw for ARM64
-2. Use the provided build script:
-   ```powershell
-   cd src
-   .\build_windows_arm.ps1 -LlvmMingwPath "C:\llvm-mingw"
-   ```
+**Quick Start:** See [QUICKSTART_WINDOWS_ARM.md](QUICKSTART_WINDOWS_ARM.md)
+
+**Full Guide:** See [BUILDING_WINDOWS_ARM.md](BUILDING_WINDOWS_ARM.md)
+
+Quick command:
+```powershell
+cd src
+.\build_windows_arm.ps1 -LlvmMingwPath "C:\llvm-mingw"
+```
 
 If you DO want to use RCEdit, use the following commands:
 
