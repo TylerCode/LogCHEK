@@ -51,7 +51,7 @@ It should also NOT fail if the csv doesn't exist, it should just create the csv 
 
 - MacOS Release (x86)
 - Linux ARM Release (should be pretty straightforward) 
-- Window ARM Release (need to do some research on getting GCC for ARM for Windows)
+- Windows ARM Release - **Documentation available, see [BUILDING_WINDOWS_ARM.md](BUILDING_WINDOWS_ARM.md)**
 - MacOS ARM Release (Will be a while, I don't have an M1 mac)
 
 
@@ -66,7 +66,7 @@ go run main.go
 
 Also, there are build scripts which mostly work :D
 
-## Windows
+## Windows (x64)
 
 You will need the `mingw` compiler tools which can be procured through the chocolatey package manager (the easiest way, just do it)
 
@@ -90,6 +90,20 @@ go build -o LogCHEK.exe cli.go
 ```
 
 to build the application and give yourself an exe. You can use RCEdit to customize it further with an icon and such.
+
+## Windows ARM64
+
+Building on Windows ARM requires a different compiler toolchain. 
+
+**Quick Start:** See [QUICKSTART_WINDOWS_ARM.md](QUICKSTART_WINDOWS_ARM.md)
+
+**Full Guide:** See [BUILDING_WINDOWS_ARM.md](BUILDING_WINDOWS_ARM.md)
+
+Quick command:
+```powershell
+cd src
+.\build_windows_arm.ps1 -LlvmMingwPath "C:\llvm-mingw"
+```
 
 If you DO want to use RCEdit, use the following commands:
 
