@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+# Built binaries
+src/LogCHEK-GUI
+src/LogCHEK
+LogCHEK-GUI
+LogCHEK
